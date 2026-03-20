@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalimera Harmonizacao | Harmonizacao Premium</title>
+    <meta
+      name="description"
+      content="Kalimera Harmonizacao: uma experiencia premium com vinhos, pratos e combinacoes sofisticadas para inspirar escolhas cheias de sabor."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              espresso: '#0f0705',
+              mahogany: '#1a0f0b',
+              claret: '#4A0E0E',
+              burgundy: '#800020',
+              gold: '#D4AF37',
+              bronze: '#C9A96E',
+              pearl: '#F5F0E9',
+              linen: '#EDE4D9',
+              olive: '#556B2F',
+              sage: '#2E4F4F'
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', 'serif'],
+              sans: ['Manrope', 'sans-serif']
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(212, 175, 55, 0.22), 0 24px 80px rgba(0, 0, 0, 0.45)',
+              card: '0 18px 60px rgba(0, 0, 0, 0.35)'
+            },
+            backgroundImage: {
+              hero: "linear-gradient(180deg, rgba(15,7,5,0.45) 0%, rgba(15,7,5,0.72) 48%, rgba(15,7,5,0.96) 100%), url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80')",
+              cellarGlow: 'radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 32%), radial-gradient(circle at bottom right, rgba(128,0,32,0.18), transparent 24%)'
+            },
+            letterSpacing: {
+              luxe: '0.28em'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top, rgba(212, 175, 55, 0.08), transparent 24%),
+          radial-gradient(circle at 85% 15%, rgba(128, 0, 32, 0.18), transparent 18%),
+          linear-gradient(180deg, #1a0f0b 0%, #120907 42%, #0f0705 100%);
+      }
+
+      .glass-panel {
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="font-sans text-pearl antialiased selection:bg-gold/30 selection:text-pearl">
+    <div class="fixed inset-x-0 top-0 z-50">
+      <header
+        id="site-header"
+        class="mx-auto mt-4 w-[calc(100%-1.5rem)] max-w-7xl rounded-full border border-white/10 bg-white/5 px-4 py-3 shadow-lg shadow-black/20 transition-all duration-500 sm:w-[calc(100%-2.5rem)] sm:px-6 lg:px-8"
+      >
+        <nav class="flex items-center justify-between gap-4">
+          <a href="#hero" class="flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-gold/20 to-burgundy/30 text-gold">
+              <i class="fa-solid fa-wine-glass"></i>
+            </div>
+            <div>
+              <p class="font-display text-lg font-semibold tracking-[0.16em] text-pearl">KALIMERA</p>
+              <p class="text-[10px] uppercase tracking-[0.42em] text-bronze">HARMONIZACAO</p>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-7 text-sm font-medium text-linen/85 lg:flex">
+            <a class="transition hover:text-gold" href="#destaques">Adega</a>
+            <a class="transition hover:text-gold" href="#harmonizacoes">Harmonizações</a>
+            <a class="transition hover:text-gold" href="#quiz">Seu Perfil</a>
+            <a class="transition hover:text-gold" href="#receitas">Receitas</a>
+            <a class="transition hover:text-gold" href="#depoimentos">Clientes</a>
+          </div>
+
+          <a
+            href="#cta-final"
+            class="hidden rounded-full border border-gold/50 bg-gold px-5 py-2.5 text-sm font-bold text-espresso transition hover:scale-[1.02] hover:bg-bronze lg:inline-flex"
+          >
+            Explorar Experiencia
+          </a>
+
+          <button
+            id="menu-toggle"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-pearl lg:hidden"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden pt-4 lg:hidden">
+          <div class="glass-panel rounded-3xl border border-white/10 bg-[#1a0f0bdd] p-4 text-sm text-linen shadow-card">
+            <div class="flex flex-col gap-3">
+              <a class="rounded-2xl px-3 py-2 transition hover:bg-white/5 hover:text-gold" href="#destaques">Destaques da Adega</a>
+              <a class="rounded-2xl px-3 py-2 transition hover:bg-white/5 hover:text-gold" href="#harmonizacoes">Harmonizações</a>
+              <a class="rounded-2xl px-3 py-2 transition hover:bg-white/5 hover:text-gold" href="#quiz">Encontre sua Combinação</a>
+              <a class="rounded-2xl px-3 py-2 transition hover:bg-white/5 hover:text-gold" href="#receitas">Receitas</a>
+              <a class="rounded-2xl px-3 py-2 transition hover:bg-white/5 hover:text-gold" href="#depoimentos">Depoimentos</a>
+              <a class="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-4 py-3 font-semibold text-espresso" href="#cta-final">Monte sua Caixa</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section
+        id="hero"
+        class="relative flex min-h-screen items-center overflow-hidden bg-hero bg-cover bg-center"
+      >
+        <div class="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,7,5,0.84),rgba(15,7,5,0.45),rgba(74,14,14,0.55))]"></div>
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-espresso to-transparent"></div>
+
+        <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 pt-32 pb-20 sm:px-6 lg:px-8">
+          <div class="max-w-4xl reveal">
+            <p class="mb-5 text-xs font-semibold uppercase tracking-luxe text-gold sm:text-sm">
+              HARMONIZACAO premium brasileira • vinho e sabor
+            </p>
+            <h1 class="max-w-4xl font-display text-5xl font-semibold leading-[1.02] text-pearl sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
+              Descubra o Prazer Perfeito:<br />
+              <span class="text-gold">Vinho + Sabor</span>
+            </h1>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-linen/85 sm:text-lg">
+              Um gole que conta histórias, um aroma que desperta memórias, uma mesa que celebra encontros.
+              Na Kalimera Harmonizacao, cada rótulo foi escolhido para transformar jantares, presentes e pequenos rituais em experiências extraordinárias.
+            </p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#destaques"
+                class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.2em] text-espresso transition hover:scale-[1.02] hover:bg-bronze"
+              >
+                Explorar a Adega
+              </a>
+              <a
+                href="#harmonizacoes"
+                class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-pearl transition hover:border-gold/50 hover:text-gold"
+              >
+                Ver Harmonizações
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3 reveal">
+            <article class="glass-panel rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-bronze">Curadoria internacional</p>
+              <h2 class="mt-3 font-display text-2xl text-pearl">Rótulos raros, sensações memoráveis</h2>
+              <p class="mt-3 text-sm leading-7 text-linen/75">
+                Da elegância de Bordeaux ao frescor vibrante de Mendoza, nossa seleção combina terroirs icônicos com achados surpreendentes.
+              </p>
+            </article>
+            <article class="glass-panel rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-bronze">Experiência sensorial</p>
+              <h2 class="mt-3 font-display text-2xl text-pearl">O encontro perfeito entre terra e taça</h2>
+              <p class="mt-3 text-sm leading-7 text-linen/75">
+                Descubra notas, texturas e harmonizações que elevam carnes, massas, queijos e sobremesas com equilíbrio impecável.
+              </p>
+            </article>
+            <article class="glass-panel rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-bronze">Caixas exclusivas</p>
+              <h2 class="mt-3 font-display text-2xl text-pearl">Seleções para presentear e impressionar</h2>
+              <p class="mt-3 text-sm leading-7 text-linen/75">
+                Monte caixas sob medida com rótulos premium, guias de degustação e combinações pensadas para ocasiões inesquecíveis.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="destaques" class="relative isolate overflow-hidden px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="absolute inset-0 -z-10 bg-cellarGlow opacity-90"></div>
+        <div class="mx-auto max-w-7xl">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal">
+            <div class="max-w-2xl">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Destaques da Adega</p>
+              <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl">Quatro rótulos para noites que merecem ser lembradas</h2>
+              <p class="mt-5 text-base leading-8 text-linen/80">
+                Escolhas que entregam profundidade, elegância e personalidade em cada taça. Para brindar, presentear ou simplesmente desacelerar com sofisticação.
+              </p>
+            </div>
+            <a href="#cta-final" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-bronze transition hover:text-gold">
+              Ver caixas especiais
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <article class="reveal group rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 shadow-card transition duration-500 hover:-translate-y-2 hover:border-gold/40 hover:shadow-glow">
+              <div class="overflow-hidden rounded-[1.6rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=900&q=80"
+                  alt="Garrafa de vinho tinto premium sobre mesa sofisticada"
+                  class="h-80 w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="px-2 pb-2">
+                <div class="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.26em] text-bronze">França • Bordeaux</p>
+                    <h3 class="mt-2 font-display text-2xl text-pearl">Chateau Lumière Réserve</h3>
+                  </div>
+                  <span class="rounded-full border border-gold/30 px-3 py-1 text-xs font-bold text-gold">95 pts</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Cassis, especiarias finas e taninos de seda. Um tinto intenso para jantares à luz de velas e conversas que atravessam a noite.
+                </p>
+                <div class="mt-5 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linen/55">Preço</p>
+                    <p class="text-2xl font-extrabold text-pearl">R$ 289</p>
+                  </div>
+                  <a href="#cta-final" class="rounded-full border border-gold/40 px-4 py-2 text-sm font-bold text-gold transition hover:bg-gold hover:text-espresso">Comprar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="reveal group rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 shadow-card transition duration-500 hover:-translate-y-2 hover:border-gold/40 hover:shadow-glow">
+              <div class="overflow-hidden rounded-[1.6rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1558001373-7b93ee48ffa4?auto=format&fit=crop&w=900&q=80"
+                  alt="Taça de vinho branco elegante em ambiente gastronômico"
+                  class="h-80 w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="px-2 pb-2">
+                <div class="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.26em] text-bronze">Itália • Toscana</p>
+                    <h3 class="mt-2 font-display text-2xl text-pearl">Bianco della Luna</h3>
+                  </div>
+                  <span class="rounded-full border border-gold/30 px-3 py-1 text-xs font-bold text-gold">92 pts</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Flores brancas, pera madura e mineralidade refinada. Um branco luminoso para frutos do mar, risotos cremosos e finais de tarde especiais.
+                </p>
+                <div class="mt-5 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linen/55">Preço</p>
+                    <p class="text-2xl font-extrabold text-pearl">R$ 219</p>
+                  </div>
+                  <a href="#cta-final" class="rounded-full border border-gold/40 px-4 py-2 text-sm font-bold text-gold transition hover:bg-gold hover:text-espresso">Comprar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="reveal group rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 shadow-card transition duration-500 hover:-translate-y-2 hover:border-gold/40 hover:shadow-glow">
+              <div class="overflow-hidden rounded-[1.6rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=900&q=80"
+                  alt="Vinho rosé servido com estética premium"
+                  class="h-80 w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="px-2 pb-2">
+                <div class="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.26em] text-bronze">Portugal • Douro</p>
+                    <h3 class="mt-2 font-display text-2xl text-pearl">Rosé Aurora Gran</h3>
+                  </div>
+                  <span class="rounded-full border border-gold/30 px-3 py-1 text-xs font-bold text-gold">91 pts</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Frutas vermelhas frescas, delicadeza floral e acidez vibrante. A escolha ideal para brunches elegantes e menus leves com charme europeu.
+                </p>
+                <div class="mt-5 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linen/55">Preço</p>
+                    <p class="text-2xl font-extrabold text-pearl">R$ 179</p>
+                  </div>
+                  <a href="#cta-final" class="rounded-full border border-gold/40 px-4 py-2 text-sm font-bold text-gold transition hover:bg-gold hover:text-espresso">Comprar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="reveal group rounded-[2rem] border border-white/10 bg-white/[0.03] p-4 shadow-card transition duration-500 hover:-translate-y-2 hover:border-gold/40 hover:shadow-glow">
+              <div class="overflow-hidden rounded-[1.6rem]">
+                <img
+                  src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=900&q=80"
+                  alt="Espumante premium em jantar fino"
+                  class="h-80 w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div class="px-2 pb-2">
+                <div class="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.26em] text-bronze">Argentina • Mendoza</p>
+                    <h3 class="mt-2 font-display text-2xl text-pearl">Altura Gran Malbec</h3>
+                  </div>
+                  <span class="rounded-full border border-gold/30 px-3 py-1 text-xs font-bold text-gold">94 pts</span>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Ameixa escura, cacau e final persistente. Um malbec estruturado para carnes nobres, queijos curados e celebrações com presença marcante.
+                </p>
+                <div class="mt-5 flex items-center justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-linen/55">Preço</p>
+                    <p class="text-2xl font-extrabold text-pearl">R$ 249</p>
+                  </div>
+                  <a href="#cta-final" class="rounded-full border border-gold/40 px-4 py-2 text-sm font-bold text-gold transition hover:bg-gold hover:text-espresso">Comprar</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="harmonizacoes" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-end">
+            <div class="reveal max-w-xl">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Harmonizações Perfeitas</p>
+              <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl">Desperte seus sentidos em combinações pensadas para impressionar</h2>
+              <p class="mt-5 text-base leading-8 text-linen/80">
+                Porque o vinho certo muda a textura do prato, prolonga aromas e transforma o jantar em narrativa. Descubra sugestões que unem alta gastronomia, frescor e intensidade na medida exata.
+              </p>
+            </div>
+            <div class="reveal rounded-[2rem] border border-sage/30 bg-gradient-to-br from-sage/10 via-white/[0.03] to-burgundy/10 p-6 shadow-card">
+              <div class="grid gap-4 sm:grid-cols-3">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.26em] text-bronze">Ocasião</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">Jantar íntimo</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.26em] text-bronze">Perfil</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">Elegante e envolvente</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.26em] text-bronze">Toque Kalimera</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">Ingredientes frescos e nobres</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80"
+                alt="Prato de carne nobre com apresentação refinada"
+                class="h-72 w-full object-cover"
+              />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Carnes nobres</p>
+                <h3 class="mt-3 font-display text-3xl text-pearl">Prime rib com redução de vinho</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  A suculência da carne encontra profundidade e estrutura em um malbec de altitude, criando um final longo, quente e memorável.
+                </p>
+                <div class="mt-6 rounded-[1.5rem] border border-gold/20 bg-gold/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-gold">Vinho sugerido</p>
+                  <p class="mt-2 text-xl font-semibold text-pearl">Altura Gran Malbec</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80"
+                alt="Massa sofisticada em prato de alta gastronomia"
+                class="h-72 w-full object-cover"
+              />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Massas e risotos</p>
+                <h3 class="mt-3 font-display text-3xl text-pearl">Risoto de limão siciliano com camarões</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  A cremosidade pede frescor e mineralidade. O branco toscano ilumina o prato e realça notas cítricas com extrema delicadeza.
+                </p>
+                <div class="mt-6 rounded-[1.5rem] border border-gold/20 bg-gold/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-gold">Vinho sugerido</p>
+                  <p class="mt-2 text-xl font-semibold text-pearl">Bianco della Luna</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80"
+                alt="Mesa com queijos, frutas e vinho em clima sofisticado"
+                class="h-72 w-full object-cover"
+              />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Entradas e tábuas</p>
+                <h3 class="mt-3 font-display text-3xl text-pearl">Brie trufado, figos e mel de flor</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Um rosé sofisticado equilibra gordura, dulçor e perfume com leveza sedutora, ideal para receber com charme e espontaneidade.
+                </p>
+                <div class="mt-6 rounded-[1.5rem] border border-gold/20 bg-gold/10 p-4">
+                  <p class="text-xs uppercase tracking-[0.24em] text-gold">Vinho sugerido</p>
+                  <p class="mt-2 text-xl font-semibold text-pearl">Rosé Aurora Gran</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-claret/30 via-[#1b100d] to-[#120907] shadow-card">
+          <div class="grid gap-0 lg:grid-cols-[0.9fr,1.1fr]">
+            <div class="reveal border-b border-white/10 p-8 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Encontre sua combinação</p>
+              <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl">Seu paladar merece uma curadoria sob medida</h2>
+              <p class="mt-5 text-base leading-8 text-linen/80">
+                Responda algumas preferências e deixe a Kalimera Harmonizacao sugerir rótulos, estilos e harmonizações com a elegância que a sua ocasião pede.
+              </p>
+
+              <div class="mt-8 space-y-4">
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-bronze">Perfil 01</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">Você prefere sabores mais intensos, frescos ou delicados?</p>
+                </div>
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-bronze">Perfil 02</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">A experiência ideal combina com jantar romântico, celebração ou presente sofisticado?</p>
+                </div>
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-bronze">Perfil 03</p>
+                  <p class="mt-2 text-lg font-semibold text-pearl">Quais ingredientes mais despertam seu apetite: carnes, massas, frutos do mar ou queijos?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal p-8 sm:p-10 lg:p-12">
+              <div class="rounded-[2rem] border border-gold/20 bg-black/20 p-6 sm:p-8">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-gold">Mini-quiz visual</p>
+                    <h3 class="mt-2 font-display text-3xl text-pearl">Monte o clima da sua taça</h3>
+                  </div>
+                  <span class="rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.2em] text-linen/70">Passo 1 de 3</span>
+                </div>
+
+                <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                  <button class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-gold/40 hover:bg-gold/10">
+                    <span class="text-xs uppercase tracking-[0.22em] text-bronze">Estilo</span>
+                    <span class="mt-3 block font-display text-2xl text-pearl">Intenso & Marcante</span>
+                    <span class="mt-2 block text-sm leading-7 text-linen/75">Tintos estruturados, notas profundas e presença inesquecível.</span>
+                  </button>
+                  <button class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-gold/40 hover:bg-gold/10">
+                    <span class="text-xs uppercase tracking-[0.22em] text-bronze">Estilo</span>
+                    <span class="mt-3 block font-display text-2xl text-pearl">Fresco & Luminoso</span>
+                    <span class="mt-2 block text-sm leading-7 text-linen/75">Brancos e rosés elegantes para momentos leves e sofisticados.</span>
+                  </button>
+                  <button class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-gold/40 hover:bg-gold/10">
+                    <span class="text-xs uppercase tracking-[0.22em] text-bronze">Ocasião</span>
+                    <span class="mt-3 block font-display text-2xl text-pearl">Jantar Memorável</span>
+                    <span class="mt-2 block text-sm leading-7 text-linen/75">Uma mesa impecável, velas acesas e uma garrafa à altura da noite.</span>
+                  </button>
+                  <button class="rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-5 text-left transition hover:border-gold/40 hover:bg-gold/10">
+                    <span class="text-xs uppercase tracking-[0.22em] text-bronze">Ocasião</span>
+                    <span class="mt-3 block font-display text-2xl text-pearl">Presente Exclusivo</span>
+                    <span class="mt-2 block text-sm leading-7 text-linen/75">Caixas sofisticadas para surpreender com bom gosto e intenção.</span>
+                  </button>
+                </div>
+
+                <div class="mt-8 rounded-[1.5rem] border border-sage/30 bg-sage/10 p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-bronze">Sugestão instantânea</p>
+                  <p class="mt-3 text-lg leading-8 text-pearl">
+                    Para paladares que amam intensidade e pratos ricos, indicamos tintos de Bordeaux e Mendoza com perfil aveludado e final persistente.
+                  </p>
+                </div>
+
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <button class="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-espresso transition hover:bg-bronze">
+                    Quero minha seleção
+                  </button>
+                  <button class="inline-flex items-center justify-center rounded-full border border-white/10 px-6 py-3 text-sm font-bold uppercase tracking-[0.18em] text-pearl transition hover:border-gold/40 hover:text-gold">
+                    Refazer escolhas
+                  </button>
+                </div>
+
+                <!-- TODO: Implementar lógica real do mini-quiz, seleção de respostas e recomendação dinâmica com JavaScript ou Alpine.js. -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="receitas" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal">
+            <div class="max-w-2xl">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Receitas para Inspirar</p>
+              <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl">Pratos que começam na cozinha e terminam em um brinde perfeito</h2>
+              <p class="mt-5 text-base leading-8 text-linen/80">
+                Selecionamos receitas que traduzem o espírito Kalimera Harmonizacao: ingredientes nobres, execução elegante e muito prazer à mesa.
+              </p>
+            </div>
+            <a href="#cta-final" class="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-bronze transition hover:text-gold">
+              Receber mais inspirações
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-[1.15fr,0.85fr,0.85fr]">
+            <article class="reveal group overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card lg:row-span-2">
+              <div class="overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
+                  alt="Mesa sofisticada com prato principal e vinho"
+                  class="h-80 w-full object-cover transition duration-700 group-hover:scale-105 lg:h-full"
+                />
+              </div>
+              <div class="p-7">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Receita assinatura</p>
+                <h3 class="mt-3 font-display text-3xl text-pearl sm:text-4xl">Filé ao molho de cogumelos e batatas douradas</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Uma receita envolvente, com textura amanteigada e sabor profundo. O tipo de prato que pede uma garrafa aberta lentamente e uma noite sem pressa.
+                </p>
+                <a href="#" class="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-gold transition hover:text-bronze">
+                  Ver receita completa
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=1200&q=80"
+                alt="Massa fresca com apresentação refinada"
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Elegância leve</p>
+                <h3 class="mt-3 font-display text-2xl text-pearl">Tagliatelle ao limone com burrata</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Frescor cítrico, cremosidade e uma taça de branco mineral para alongar a experiência.
+                </p>
+                <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-gold transition hover:text-bronze">Explorar prato</a>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-card">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80"
+                alt="Risoto sofisticado em close elegante"
+                class="h-60 w-full object-cover"
+              />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.24em] text-bronze">Conforto refinado</p>
+                <h3 class="mt-3 font-display text-2xl text-pearl">Risoto de parmesão com lâminas de trufa</h3>
+                <p class="mt-4 text-sm leading-7 text-linen/75">
+                  Cremoso, aromático e perfeito para harmonizar com rótulos de textura sedosa.
+                </p>
+                <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-gold transition hover:text-bronze">Explorar prato</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="depoimentos" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal max-w-2xl">
+            <p class="text-xs font-semibold uppercase tracking-luxe text-gold">O que dizem nossos clientes</p>
+            <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl">Pequenos relatos de quem transformou o jantar em experiência</h2>
+            <p class="mt-5 text-base leading-8 text-linen/80">
+              Cada comentário confirma o que mais importa para nós: quando vinho, gastronomia e atmosfera se encontram, o momento ganha outra dimensão.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="reveal rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 shadow-card">
+              <div class="flex gap-1 text-gold">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-6 font-display text-2xl text-pearl">“A caixa chegou impecável e o vinho foi o centro da noite.”</p>
+              <p class="mt-4 text-sm leading-7 text-linen/75">
+                Escolhi uma seleção para um jantar em casa e fiquei impressionada com a curadoria. Tudo tinha presença, equilíbrio e muito bom gosto.
+              </p>
+              <p class="mt-6 text-xs uppercase tracking-[0.24em] text-bronze">Mariana • São Paulo</p>
+            </article>
+
+            <article class="reveal rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 shadow-card">
+              <div class="flex gap-1 text-gold">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-6 font-display text-2xl text-pearl">“As harmonizações acertaram exatamente o clima que eu queria criar.”</p>
+              <p class="mt-4 text-sm leading-7 text-linen/75">
+                Usei as sugestões com um prato de massa fresca e foi como receber uma consultoria de sommellerie dentro de casa.
+              </p>
+              <p class="mt-6 text-xs uppercase tracking-[0.24em] text-bronze">Ricardo • Curitiba</p>
+            </article>
+
+            <article class="reveal rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 shadow-card">
+              <div class="flex gap-1 text-gold">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-6 font-display text-2xl text-pearl">“Sofisticado sem ser distante. Dá vontade de explorar tudo.”</p>
+              <p class="mt-4 text-sm leading-7 text-linen/75">
+                A proposta une desejo, praticidade e descoberta. Hoje eu escolho vinhos com muito mais confiança e prazer.
+              </p>
+              <p class="mt-6 text-xs uppercase tracking-[0.24em] text-bronze">Helena • Belo Horizonte</p>
+            </article>
+          </div>
+
+          <!-- TODO: Implementar carrossel responsivo de depoimentos para mobile e autoplay opcional em uma próxima etapa. -->
+        </div>
+      </section>
+
+      <section id="cta-final" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl reveal">
+          <div class="relative overflow-hidden rounded-[2.8rem] border border-gold/20 bg-[linear-gradient(135deg,rgba(212,175,55,0.12),rgba(128,0,32,0.18),rgba(15,7,5,0.94))] p-8 shadow-glow sm:p-10 lg:p-14">
+            <div class="absolute -top-20 right-0 h-56 w-56 rounded-full bg-gold/10 blur-3xl"></div>
+            <div class="absolute -bottom-24 left-0 h-56 w-56 rounded-full bg-burgundy/20 blur-3xl"></div>
+
+            <div class="relative grid gap-10 lg:grid-cols-[1fr,0.72fr] lg:items-center">
+              <div class="max-w-2xl">
+                <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Oferta exclusiva Kalimera Harmonizacao</p>
+                <h2 class="mt-4 font-display text-4xl text-pearl sm:text-5xl lg:text-6xl">
+                  Monte sua caixa personalizada e receba <span class="text-gold">15% off</span> na primeira seleção
+                </h2>
+                <p class="mt-6 text-base leading-8 text-linen/80 sm:text-lg">
+                  Escolha o perfil da sua experiência, combine estilos, descubra harmonizações e leve para casa uma curadoria digna de restaurantes e adegas de referência.
+                </p>
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <a href="#" class="inline-flex items-center justify-center rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-espresso transition hover:bg-bronze">
+                    Montar minha caixa
+                  </a>
+                  <a href="#destaques" class="inline-flex items-center justify-center rounded-full border border-white/10 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-pearl transition hover:border-gold/40 hover:text-gold">
+                    Revisitar rótulos
+                  </a>
+                </div>
+              </div>
+
+              <div class="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 shadow-card sm:p-8">
+                <p class="text-xs uppercase tracking-[0.22em] text-bronze">Benefícios da sua primeira caixa</p>
+                <ul class="mt-6 space-y-4 text-sm leading-7 text-linen/80">
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-gold"></i><span>Curadoria com rótulos premium para o seu paladar e ocasião.</span></li>
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-gold"></i><span>Guia de degustação com notas, temperatura ideal e sugestões de harmonização.</span></li>
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-gold"></i><span>Condições especiais para assinatura e reposição dos seus favoritos.</span></li>
+                </ul>
+                <div class="mt-8 rounded-[1.5rem] border border-sage/20 bg-sage/10 p-5">
+                  <p class="text-xs uppercase tracking-[0.22em] text-bronze">Código de boas-vindas</p>
+                  <p class="mt-2 font-display text-3xl text-pearl">KALIMERA15</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10 px-4 py-14 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr,0.9fr,0.8fr]">
+        <div>
+          <a href="#hero" class="flex items-center gap-3">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-gradient-to-br from-gold/20 to-burgundy/30 text-gold">
+              <i class="fa-solid fa-wine-glass"></i>
+            </div>
+            <div>
+              <p class="font-display text-xl font-semibold tracking-[0.16em] text-pearl">KALIMERA</p>
+              <p class="text-[10px] uppercase tracking-[0.42em] text-bronze">HARMONIZACAO</p>
+            </div>
+          </a>
+          <p class="mt-6 max-w-md text-sm leading-7 text-linen/75">
+            Descubra rótulos do mundo todo, harmonizações elegantes e experiências pensadas para quem acredita que grandes momentos começam à mesa.
+          </p>
+          <div class="mt-6 flex gap-3 text-lg text-pearl">
+            <a href="#" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] transition hover:border-gold/40 hover:text-gold"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] transition hover:border-gold/40 hover:text-gold"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] transition hover:border-gold/40 hover:text-gold"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Newsletter Privada</p>
+          <h3 class="mt-4 font-display text-3xl text-pearl">Receba harmonizações, novidades e convites exclusivos</h3>
+          <form class="mt-6 flex flex-col gap-4 sm:flex-row">
+            <input
+              type="email"
+              placeholder="Seu melhor e-mail"
+              class="min-h-[56px] flex-1 rounded-full border border-white/10 bg-white/[0.03] px-5 text-sm text-pearl placeholder:text-linen/40 focus:border-gold/40 focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="min-h-[56px] rounded-full bg-gold px-6 text-sm font-bold uppercase tracking-[0.16em] text-espresso transition hover:bg-bronze"
+            >
+              Assinar
+            </button>
+          </form>
+          <p class="mt-3 text-xs leading-6 text-linen/55">
+            Conteúdo elegante, sem excessos: apenas inspiração de verdade para sua próxima experiência.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-luxe text-gold">Confiança e excelência</p>
+          <div class="mt-5 space-y-4">
+            <div class="flex items-start gap-3 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+              <i class="fa-solid fa-lock text-gold"></i>
+              <div>
+                <p class="font-semibold text-pearl">Pagamento protegido</p>
+                <p class="text-sm leading-6 text-linen/70">Ambiente seguro para compras, cadastro e checkout.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+              <i class="fa-solid fa-medal text-gold"></i>
+              <div>
+                <p class="font-semibold text-pearl">Curadoria premium</p>
+                <p class="text-sm leading-6 text-linen/70">Seleções com foco em qualidade, origem e experiência sensorial.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-[1.5rem] border border-white/10 bg-white/[0.03] p-4">
+              <i class="fa-solid fa-truck-fast text-gold"></i>
+              <div>
+                <p class="font-semibold text-pearl">Entrega cuidadosa</p>
+                <p class="text-sm leading-6 text-linen/70">Embalagem protegida para preservar cada detalhe do seu pedido.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.16em] text-linen/45 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Kalimera Harmonizacao. Todos os direitos reservados.</p>
+        <div class="flex gap-4">
+          <a href="#" class="transition hover:text-gold">Política de Privacidade</a>
+          <a href="#" class="transition hover:text-gold">Termos</a>
+          <a href="#" class="transition hover:text-gold">Contato</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const revealItems = document.querySelectorAll('.reveal');
+
+      const updateHeaderState = () => {
+        if (window.scrollY > 24) {
+          header.classList.add('bg-[#120907f0]', 'border-gold/15', 'shadow-2xl');
+          header.classList.remove('bg-white/5');
+        } else {
+          header.classList.remove('bg-[#120907f0]', 'border-gold/15', 'shadow-2xl');
+          header.classList.add('bg-white/5');
+        }
+      };
+
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('hidden');
+        menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      document.querySelectorAll('#mobile-menu a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      const revealOnScroll = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealOnScroll.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.16
+        }
+      );
+
+      revealItems.forEach((item) => revealOnScroll.observe(item));
+      updateHeaderState();
+      window.addEventListener('scroll', updateHeaderState);
+    </script>
+  </body>
+</html>

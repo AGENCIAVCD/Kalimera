@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalimera Degustações | Agenda do Mês</title>
+    <meta
+      name="description"
+      content="Conheça a agenda premium de degustações da Kalimera: datas do mês, experiências exclusivas, harmonizações especiais e convites para noites memoráveis."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              kaligreen: '#7ED321',
+              leaf: '#87B340',
+              olive: '#556B2F',
+              butter: '#F4D35E',
+              sunflower: '#F2C94C',
+              cream: '#FFFDF7',
+              pearl: '#F7F4EC',
+              linen: '#EFE8D8',
+              stone: '#5F5A52',
+              ink: '#2A241F'
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', 'serif'],
+              sans: ['Manrope', 'sans-serif']
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(126, 211, 33, 0.18), 0 24px 90px rgba(87, 123, 48, 0.16)',
+              card: '0 18px 55px rgba(88, 82, 67, 0.12)'
+            },
+            letterSpacing: {
+              luxe: '0.28em'
+            },
+            backgroundImage: {
+              hero: "linear-gradient(90deg, rgba(255,253,247,0.92) 0%, rgba(255,253,247,0.78) 40%, rgba(255,253,247,0.30) 100%), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1800&q=80')"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top, rgba(126, 211, 33, 0.10), transparent 24%),
+          radial-gradient(circle at 100% 0%, rgba(244, 211, 94, 0.16), transparent 26%),
+          linear-gradient(180deg, #fffef9 0%, #fbf8ef 100%);
+      }
+
+      .glass-panel {
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.9s ease, transform 0.9s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink antialiased selection:bg-butter/60 selection:text-ink">
+    <div class="fixed inset-x-0 top-0 z-50">
+      <header
+        id="site-header"
+        class="mx-auto mt-4 w-[calc(100%-1.5rem)] max-w-7xl rounded-full border border-white/60 bg-white/85 px-4 py-3 shadow-lg shadow-stone-200/40 transition-all duration-500 sm:w-[calc(100%-2.5rem)] sm:px-6 lg:px-8"
+      >
+        <nav class="flex items-center justify-between gap-4">
+          <a href="#hero" class="flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-leaf/25 bg-kaligreen/10 text-leaf">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div>
+              <p class="font-display text-lg font-semibold tracking-[0.16em] text-ink">KALIMERA</p>
+              <p class="text-[10px] uppercase tracking-[0.42em] text-leaf">Degustações</p>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-7 text-sm font-medium text-stone lg:flex">
+            <a class="transition hover:text-leaf" href="#agenda">Agenda</a>
+            <a class="transition hover:text-leaf" href="#experiencias">Experiências</a>
+            <a class="transition hover:text-leaf" href="#proximas">Próximas Datas</a>
+            <a class="transition hover:text-leaf" href="#membership">Clube</a>
+            <a class="transition hover:text-leaf" href="../HARMONIZACAO/">HARMONIZACAO</a>
+          </div>
+
+          <a
+            href="#proximas"
+            class="hidden rounded-full bg-kaligreen px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-95 lg:inline-flex"
+          >
+            Reservar Lugar
+          </a>
+        </nav>
+      </header>
+    </div>
+
+    <main>
+      <section id="hero" class="relative flex min-h-screen items-center overflow-hidden bg-hero bg-cover bg-center">
+        <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#fbf8ef] to-transparent"></div>
+
+        <div class="relative mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 pt-32 pb-20 sm:px-6 lg:px-8">
+          <div class="max-w-4xl reveal">
+            <p class="mb-5 text-xs font-semibold uppercase tracking-luxe text-leaf sm:text-sm">
+              Agenda do mês • experiências exclusivas • convites limitados
+            </p>
+            <h1 class="max-w-5xl font-display text-5xl font-semibold leading-[1.02] text-ink sm:text-6xl lg:text-7xl xl:text-[5.2rem]">
+              Degustações que aproximam sabor, pessoas e boas histórias
+            </h1>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-stone sm:text-lg">
+              Um calendário pensado para convidar o cliente a descobrir novas combinações, viver encontros especiais e reservar noites que valem entrar na agenda.
+            </p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#proximas"
+                class="inline-flex items-center justify-center rounded-full bg-kaligreen px-7 py-4 text-sm font-extrabold uppercase tracking-[0.2em] text-white transition hover:brightness-95"
+              >
+                Ver Próximas Datas
+              </a>
+              <a
+                href="#agenda"
+                class="inline-flex items-center justify-center rounded-full border border-leaf/20 bg-white/80 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-ink transition hover:border-leaf/40 hover:text-leaf"
+              >
+                Explorar Agenda
+              </a>
+            </div>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3 reveal">
+            <article class="glass-panel rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-leaf">Noites temáticas</p>
+              <h2 class="mt-3 font-display text-2xl text-ink">França, Itália, Portugal e o Novo Mundo</h2>
+              <p class="mt-3 text-sm leading-7 text-stone">
+                Cada encontro convida o cliente a viajar entre terroirs, estilos e harmonizações desenhadas para surpreender do primeiro ao último gole.
+              </p>
+            </article>
+            <article class="glass-panel rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-leaf">Agenda Kalimera</p>
+              <h2 class="mt-3 font-display text-2xl text-ink">Seu próximo compromisso com o prazer</h2>
+              <p class="mt-3 text-sm leading-7 text-stone">
+                Datas, horários e experiências organizadas para despertar desejo e facilitar a escolha da próxima noite especial.
+              </p>
+            </article>
+            <article class="glass-panel rounded-[2rem] border border-white/70 bg-white/70 p-5 shadow-card">
+              <p class="text-xs uppercase tracking-[0.28em] text-leaf">Experiência Kalimera</p>
+              <h2 class="mt-3 font-display text-2xl text-ink">Ingredientes nobres e serviço acolhedor</h2>
+              <p class="mt-3 text-sm leading-7 text-stone">
+                Pequenos pratos, frutas, queijos e vinhos cuidadosamente servidos em uma atmosfera leve, clara e convidativa.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="agenda" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal">
+            <div class="max-w-2xl">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-leaf">Agenda do mês</p>
+              <h2 class="mt-4 font-display text-4xl text-ink sm:text-5xl">Abril com encontros que pedem reserva antecipada</h2>
+              <p class="mt-5 text-base leading-8 text-stone">
+                Uma agenda clara, elegante e cheia de intenção. Cada data foi pensada para parecer especial, acessível e desejada ao mesmo tempo.
+              </p>
+            </div>
+            <div class="rounded-full border border-leaf/20 bg-kaligreen/10 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-leaf">
+              Lugares limitados por sessão
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-6 xl:grid-cols-[0.8fr,1.2fr]">
+            <aside class="reveal rounded-[2rem] border border-stone-200 bg-white p-6 shadow-card">
+              <p class="text-xs uppercase tracking-[0.22em] text-leaf">Calendário curado</p>
+              <div class="mt-6 grid grid-cols-7 gap-2 text-center text-xs uppercase tracking-[0.18em] text-stone/60">
+                <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+              </div>
+              <div class="mt-4 grid grid-cols-7 gap-2 text-sm">
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/30">30</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/30">31</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">1</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">2</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">3</div>
+                <div class="rounded-2xl border border-leaf/20 bg-kaligreen/10 py-3 font-bold text-leaf">4</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">5</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">6</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">7</div>
+                <div class="rounded-2xl border border-butter/40 bg-butter/30 py-3 font-bold text-ink">8</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">9</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">10</div>
+                <div class="rounded-2xl border border-leaf/20 bg-kaligreen/10 py-3 font-bold text-leaf">11</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">12</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">13</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">14</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">15</div>
+                <div class="rounded-2xl border border-leaf/20 bg-kaligreen/10 py-3 font-bold text-leaf">16</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">17</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">18</div>
+                <div class="rounded-2xl border border-butter/40 bg-butter/30 py-3 font-bold text-ink">19</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">20</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">21</div>
+                <div class="rounded-2xl border border-leaf/20 bg-kaligreen/10 py-3 font-bold text-leaf">22</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">23</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">24</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">25</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">26</div>
+                <div class="rounded-2xl border border-butter/40 bg-butter/30 py-3 font-bold text-ink">27</div>
+                <div class="rounded-2xl border border-stone-100 py-3 text-stone/55">28</div>
+              </div>
+              <div class="mt-6 space-y-3 text-sm text-stone">
+                <p class="flex items-center gap-3"><span class="h-3 w-3 rounded-full bg-kaligreen"></span> Sessões com poucas vagas</p>
+                <p class="flex items-center gap-3"><span class="h-3 w-3 rounded-full bg-butter"></span> Eventos especiais do mês</p>
+              </div>
+            </aside>
+
+            <div class="grid gap-5">
+              <article class="reveal rounded-[2rem] border border-leaf/15 bg-[linear-gradient(90deg,rgba(126,211,33,0.14),rgba(255,255,255,1))] p-6 shadow-card">
+                <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-leaf">Sexta • 04 de Abril • 20h</p>
+                    <h3 class="mt-3 font-display text-3xl text-ink">Noite Bordeaux & Jazz</h3>
+                    <p class="mt-3 max-w-2xl text-sm leading-7 text-stone">
+                      Uma degustação elegante com tintos franceses, tábua de queijos maturados e trilha suave para uma noite acolhedora e sofisticada.
+                    </p>
+                  </div>
+                  <div class="flex flex-col items-start gap-3 lg:items-end">
+                    <span class="rounded-full border border-leaf/20 bg-kaligreen/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-leaf">Últimas vagas</span>
+                    <a href="#membership" class="rounded-full bg-kaligreen px-5 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:brightness-95">Reservar</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-6 shadow-card">
+                <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-leaf">Terça • 08 de Abril • 19h30</p>
+                    <h3 class="mt-3 font-display text-3xl text-ink">Brancos do Mediterrâneo</h3>
+                    <p class="mt-3 max-w-2xl text-sm leading-7 text-stone">
+                      Uma seleção fresca e luminosa com rótulos da Itália, Grécia e Portugal, acompanhada por ostras, carpaccio e azeites especiais.
+                    </p>
+                  </div>
+                  <span class="rounded-full border border-butter/40 bg-butter/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink">Convite aberto</span>
+                </div>
+              </article>
+
+              <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-6 shadow-card">
+                <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-leaf">Sexta • 11 de Abril • 20h</p>
+                    <h3 class="mt-3 font-display text-3xl text-ink">Malbec, Brasas e Cortes Nobres</h3>
+                    <p class="mt-3 max-w-2xl text-sm leading-7 text-stone">
+                      Uma noite intensa, pensada para quem ama vinhos estruturados, carnes premium e harmonizações de presença marcante.
+                    </p>
+                  </div>
+                  <span class="rounded-full border border-leaf/20 bg-kaligreen/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-leaf">High demand</span>
+                </div>
+              </article>
+
+              <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-6 shadow-card">
+                <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.22em] text-leaf">Quarta • 16 de Abril • 19h</p>
+                    <h3 class="mt-3 font-display text-3xl text-ink">Rosés, Flores & Sunset Bites</h3>
+                    <p class="mt-3 max-w-2xl text-sm leading-7 text-stone">
+                      Uma experiência leve e sofisticada para o fim da tarde, com rosés premium, pequenas criações frias e atmosfera de encontro elegante.
+                    </p>
+                  </div>
+                  <span class="rounded-full border border-butter/40 bg-butter/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-ink">Poucas vagas</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiencias" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="reveal max-w-2xl">
+            <p class="text-xs font-semibold uppercase tracking-luxe text-leaf">Experiências em destaque</p>
+            <h2 class="mt-4 font-display text-4xl text-ink sm:text-5xl">Mais do que degustar: viver cada encontro com leveza e identidade</h2>
+          </div>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+            <article class="reveal overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80" alt="Degustação sofisticada com taças de vinho" class="h-72 w-full object-cover" />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-leaf">Para descobrir</p>
+                <h3 class="mt-3 font-display text-3xl text-ink">Rótulos raros em edição limitada</h3>
+                <p class="mt-4 text-sm leading-7 text-stone">
+                  Sessões com pequenos lotes, histórias de produtores e uma curadoria pensada para impressionar quem gosta de novidade com qualidade.
+                </p>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+              <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80" alt="Mesa clara e convidativa pronta para evento" class="h-72 w-full object-cover" />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-leaf">Para celebrar</p>
+                <h3 class="mt-3 font-display text-3xl text-ink">Noites com atmosfera acolhedora</h3>
+                <p class="mt-4 text-sm leading-7 text-stone">
+                  Serviço cuidadoso, clima agradável e convidados que valorizam a boa mesa, o bom vinho e o prazer de estar ali.
+                </p>
+              </div>
+            </article>
+
+            <article class="reveal overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Mesa com harmonizações finas e ingredientes nobres" class="h-72 w-full object-cover" />
+              <div class="p-6">
+                <p class="text-xs uppercase tracking-[0.22em] text-leaf">Para harmonizar</p>
+                <h3 class="mt-3 font-display text-3xl text-ink">Pequenos pratos, grandes descobertas</h3>
+                <p class="mt-4 text-sm leading-7 text-stone">
+                  Queijos, frutas, charcutaria e receitas leves entram como extensão natural do vinho e ajudam a contar a história da noite.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proximas" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl">
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal">
+            <div class="max-w-2xl">
+              <p class="text-xs font-semibold uppercase tracking-luxe text-leaf">Próximas degustações</p>
+              <h2 class="mt-4 font-display text-4xl text-ink sm:text-5xl">Escolha sua próxima noite favorita</h2>
+            </div>
+            <p class="max-w-xl text-sm leading-7 text-stone">
+              Ideal para funcionar como agenda, line-up de eventos ou programação mensal, agora com uma leitura visual mais próxima do universo Kalimera.
+            </p>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-5 shadow-card transition duration-500 hover:-translate-y-2 hover:border-leaf/30 hover:shadow-glow">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">19 Abril</p>
+              <h3 class="mt-3 font-display text-2xl text-ink">Syrah & Queijos de Caverna</h3>
+              <p class="mt-4 text-sm leading-7 text-stone">Uma jornada intensa entre taninos sedosos, notas defumadas e queijos de personalidade.</p>
+              <div class="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-stone/65">
+                <span>20h</span>
+                <span>24 lugares</span>
+              </div>
+            </article>
+
+            <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-5 shadow-card transition duration-500 hover:-translate-y-2 hover:border-leaf/30 hover:shadow-glow">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">22 Abril</p>
+              <h3 class="mt-3 font-display text-2xl text-ink">Espumantes & Ostras</h3>
+              <p class="mt-4 text-sm leading-7 text-stone">Brinde a uma noite luminosa com borbulhas refinadas, frescor marinho e serviço impecável.</p>
+              <div class="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-stone/65">
+                <span>19h30</span>
+                <span>18 lugares</span>
+              </div>
+            </article>
+
+            <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-5 shadow-card transition duration-500 hover:-translate-y-2 hover:border-leaf/30 hover:shadow-glow">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">27 Abril</p>
+              <h3 class="mt-3 font-display text-2xl text-ink">Pinot Noir & Alta Cozinha</h3>
+              <p class="mt-4 text-sm leading-7 text-stone">Uma noite de delicadeza, textura e camadas aromáticas acompanhadas por pratos autorais.</p>
+              <div class="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-stone/65">
+                <span>20h</span>
+                <span>20 lugares</span>
+              </div>
+            </article>
+
+            <article class="reveal rounded-[2rem] border border-stone-200 bg-white p-5 shadow-card transition duration-500 hover:-translate-y-2 hover:border-leaf/30 hover:shadow-glow">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">30 Abril</p>
+              <h3 class="mt-3 font-display text-2xl text-ink">Grand Tasting Kalimera</h3>
+              <p class="mt-4 text-sm leading-7 text-stone">Nosso encontro mais desejado do mês, com múltiplas estações, rótulos premium e clima de celebração.</p>
+              <div class="mt-6 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-stone/65">
+                <span>20h30</span>
+                <span>36 lugares</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="membership" class="px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div class="mx-auto max-w-7xl reveal">
+          <div class="relative overflow-hidden rounded-[2.8rem] border border-leaf/15 bg-[linear-gradient(135deg,rgba(126,211,33,0.16),rgba(244,211,94,0.28),rgba(255,255,255,1))] p-8 shadow-glow sm:p-10 lg:p-14">
+            <div class="absolute -top-20 right-0 h-56 w-56 rounded-full bg-butter/30 blur-3xl"></div>
+            <div class="absolute -bottom-24 left-0 h-56 w-56 rounded-full bg-kaligreen/20 blur-3xl"></div>
+
+            <div class="relative grid gap-10 lg:grid-cols-[1fr,0.72fr] lg:items-center">
+              <div class="max-w-2xl">
+                <p class="text-xs font-semibold uppercase tracking-luxe text-leaf">Clube de experiências</p>
+                <h2 class="mt-4 font-display text-4xl text-ink sm:text-5xl lg:text-6xl">
+                  Entre para a lista prioritária das próximas degustações
+                </h2>
+                <p class="mt-6 text-base leading-8 text-stone sm:text-lg">
+                  Receba convites antecipados, acesso a listas limitadas, menus especiais e noites privadas pensadas para clientes que valorizam exclusividade com a cara do Kalimera.
+                </p>
+                <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <a href="#" class="inline-flex items-center justify-center rounded-full bg-kaligreen px-7 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:brightness-95">
+                    Entrar na lista VIP
+                  </a>
+                  <a href="../HARMONIZACAO/" class="inline-flex items-center justify-center rounded-full border border-leaf/20 bg-white/70 px-7 py-4 text-sm font-bold uppercase tracking-[0.18em] text-ink transition hover:border-leaf/40 hover:text-leaf">
+                    Ver página de vinhos
+                  </a>
+                </div>
+              </div>
+
+              <div class="rounded-[2rem] border border-white/70 bg-white/80 p-6 shadow-card sm:p-8">
+                <p class="text-xs uppercase tracking-[0.22em] text-leaf">O que esperar</p>
+                <ul class="mt-6 space-y-4 text-sm leading-7 text-stone">
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-leaf"></i><span>Reservas antecipadas para sessões limitadas.</span></li>
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-leaf"></i><span>Convites para edições sazonais e noites temáticas especiais.</span></li>
+                  <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-leaf"></i><span>Benefícios exclusivos em experiências, caixas e compras na adega.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-stone-200 px-4 py-14 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="font-display text-2xl text-ink">Kalimera Degustações</p>
+          <p class="mt-2 text-sm text-stone">Calendário premium de experiências em vinho, gastronomia e encontros memoráveis.</p>
+        </div>
+        <div class="flex gap-4 text-sm uppercase tracking-[0.16em] text-stone/70">
+          <a href="../" class="transition hover:text-leaf">Início</a>
+          <a href="../HARMONIZACAO/" class="transition hover:text-leaf">HARMONIZACAO</a>
+          <a href="#agenda" class="transition hover:text-leaf">Agenda</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      const revealItems = document.querySelectorAll('.reveal');
+
+      const updateHeaderState = () => {
+        if (window.scrollY > 24) {
+          header.classList.add('bg-white', 'shadow-xl');
+          header.classList.remove('bg-white/85');
+        } else {
+          header.classList.remove('bg-white', 'shadow-xl');
+          header.classList.add('bg-white/85');
+        }
+      };
+
+      const revealOnScroll = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealOnScroll.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      revealItems.forEach((item) => revealOnScroll.observe(item));
+      updateHeaderState();
+      window.addEventListener('scroll', updateHeaderState);
+    </script>
+  </body>
+</html>
