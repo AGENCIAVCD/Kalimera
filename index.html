@@ -6,7 +6,7 @@
     <title>Kalimera | Tudo é feito pensando em você</title>
     <meta
       name="description"
-      content="No Kalimera tudo é feito pensando em você. Conheça nossas experiências em vinhos e degustações com uma home inspirada na comunicação institucional da marca."
+      content="No Kalimera tudo é feito pensando em você. Selecionamos os melhores produtos para levar o melhor para o seu lar e apresentar nossas experiências em degustação e harmonização."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,22 +14,25 @@
         theme: {
           extend: {
             colors: {
-              noir: '#0f0705',
-              gold: '#D4AF37',
-              bronze: '#C9A96E',
-              pearl: '#F5F0E9',
-              linen: '#EDE4D9',
-              wine: '#4A0E0E',
-              sage: '#2E4F4F',
               kaligreen: '#7ED321',
-              leaf: '#87b340'
+              leaf: '#87B340',
+              olive: '#556B2F',
+              butter: '#F2D35D',
+              cream: '#FFFDF7',
+              pearl: '#F7F4EC',
+              stone: '#6A6358',
+              ink: '#2A241F'
             },
             fontFamily: {
               display: ['"Playfair Display"', 'serif'],
               sans: ['Manrope', 'sans-serif']
             },
             boxShadow: {
-              card: '0 18px 55px rgba(0, 0, 0, 0.18)'
+              card: '0 20px 60px rgba(72, 66, 52, 0.12)'
+            },
+            backgroundImage: {
+              heroGlow: 'linear-gradient(135deg, rgba(255,253,247,0.95), rgba(255,253,247,0.78))',
+              stripes: 'linear-gradient(135deg, rgba(135,179,64,0.08) 0%, rgba(135,179,64,0.08) 16%, transparent 16%, transparent 32%, rgba(242,211,93,0.10) 32%, rgba(242,211,93,0.10) 48%, transparent 48%, transparent 64%, rgba(135,179,64,0.05) 64%, rgba(135,179,64,0.05) 80%, transparent 80%, transparent 100%)'
             }
           }
         }
@@ -48,136 +51,239 @@
     <style>
       body {
         background:
-          radial-gradient(circle at top, rgba(126, 211, 33, 0.08), transparent 28%),
+          radial-gradient(circle at top, rgba(126, 211, 33, 0.10), transparent 26%),
           linear-gradient(180deg, #fffef9 0%, #faf8f2 100%);
       }
     </style>
   </head>
-  <body class="font-sans text-stone-800 antialiased">
-    <header class="sticky top-0 z-50 border-b border-stone-200/80 bg-white/90 backdrop-blur-md">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.32em] text-leaf">Kalimera</p>
-          <p class="font-display text-2xl text-stone-800">Experiências</p>
+  <body class="font-sans text-ink antialiased">
+    <header class="border-b border-stone-200/80 bg-white/95">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 text-xs font-semibold text-stone sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-kaligreen/15 text-leaf"><i class="fa-solid fa-truck-fast"></i></span>
+          <span>Delivery</span>
         </div>
-        <nav class="hidden items-center gap-8 text-sm font-semibold text-stone-600 lg:flex">
-          <a href="#quem-somos" class="transition hover:text-leaf">Quem somos</a>
-          <a href="#qualidade" class="transition hover:text-leaf">Qualidade</a>
-          <a href="#destinos" class="transition hover:text-leaf">Experiências</a>
-        </nav>
+        <div class="rounded-full bg-kaligreen px-4 py-1.5 text-white">Acesse já</div>
+        <div class="hidden items-center gap-2 sm:flex">
+          <i class="fa-regular fa-envelope text-leaf"></i>
+          <span>contato@redekalimera.com.br</span>
+        </div>
+        <div class="hidden lg:block">Trabalhe Conosco</div>
       </div>
     </header>
 
     <main>
-      <section class="px-4 pt-8 pb-14 sm:px-6 lg:px-8 lg:pt-10 lg:pb-20">
-        <div class="mx-auto grid max-w-7xl overflow-hidden rounded-[2.5rem] border border-stone-200 bg-white shadow-card lg:grid-cols-[1.05fr,0.95fr]">
-          <div class="order-2 flex flex-col justify-center px-6 py-10 sm:px-10 lg:order-1 lg:px-14">
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">Kalimera</p>
-            <h1 class="mt-5 font-display text-5xl leading-[0.98] text-stone-800 sm:text-6xl">
-              No Kalimera tudo é feito pensando em <span class="italic text-leaf">você</span>
-            </h1>
-            <p class="mt-6 max-w-xl text-lg leading-8 text-stone-600">
-              Selecionamos os melhores produtos pra levar o melhor para o seu lar e criar experiências que unem sabor, descoberta e cuidado em cada detalhe.
-            </p>
-            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="./HARMONIZACAO/" class="inline-flex items-center justify-center rounded-full bg-stone-900 px-7 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:bg-wine">
-                Entrar em HARMONIZACAO
-              </a>
-              <a href="./DEGUSTACAO/" class="inline-flex items-center justify-center rounded-full bg-kaligreen px-7 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white transition hover:brightness-95">
-                Ver DEGUSTACAO
-              </a>
+      <section class="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+        <div class="mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] border border-stone-200 bg-white shadow-card">
+          <div class="flex items-center justify-between px-6 py-5 sm:px-8 lg:px-10">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-leaf">Kalimera</p>
+              <p class="font-display text-3xl text-ink">Experiências</p>
             </div>
+            <nav class="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.18em] text-stone lg:flex">
+              <a href="#quem-somos" class="transition hover:text-leaf">Sobre nós</a>
+              <a href="#destinos" class="transition hover:text-leaf">Unidades</a>
+              <a href="./HARMONIZACAO/" class="transition hover:text-leaf">Adega Kalimera</a>
+              <a href="./DEGUSTACAO/" class="transition hover:text-leaf">Dica da noite</a>
+              <a href="#destinos" class="transition hover:text-leaf">Compre online</a>
+              <a href="#destinos" class="transition hover:text-leaf">Contato</a>
+            </nav>
           </div>
-          <div class="order-1 min-h-[360px] lg:order-2 lg:min-h-[620px]">
-            <img
-              src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1400&q=80"
-              alt="Mulher sorrindo com prato fresco e colorido"
-              class="h-full w-full object-cover"
-            />
+
+          <div class="grid lg:grid-cols-[1.05fr,0.95fr]">
+            <div class="relative min-h-[360px] overflow-hidden lg:min-h-[520px]">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=80"
+                alt="Mulher sorrindo apreciando refeição fresca"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div class="relative overflow-hidden bg-heroGlow px-6 py-10 sm:px-10 lg:px-12">
+              <div class="absolute inset-0 bg-stripes opacity-60"></div>
+              <div class="relative">
+                <h1 class="max-w-xl font-sans text-5xl font-extrabold leading-[0.95] text-ink sm:text-6xl">
+                  No Kalimera<br />
+                  tudo é feito<br />
+                  pensando em <span class="font-display italic text-leaf">você</span>
+                </h1>
+                <p class="mt-6 max-w-lg text-xl leading-8 text-stone">
+                  Selecionamos os melhores produtos pra levar o melhor para o seu lar.
+                </p>
+                <p class="mt-4 max-w-lg text-base leading-8 text-stone">
+                  Da compra do dia às experiências especiais de <strong>DEGUSTACAO</strong> e <strong>HARMONIZACAO</strong>, cada detalhe nasce para aproximar qualidade, sabor e cuidado.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="quem-somos" class="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-        <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.85fr,1.15fr]">
-          <div class="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+      <section id="quem-somos" class="px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr,1.2fr]">
+          <div>
+            <p class="text-sm font-extrabold text-leaf">Quem somos nós</p>
+            <div class="mt-6 max-w-xl space-y-5 text-sm leading-8 text-stone sm:text-base">
+              <p>
+                Variedade, excelência em produtos de hortifruti e ótimo atendimento, assim a Rede Kalimera oferece a melhor experiência ao entrar em uma de nossas unidades.
+              </p>
+              <p>
+                Hoje somos lojas muito bem localizadas na cidade de Jundiaí, com grande variedade em hortifruti, adega, mercearia, açougue, padaria e conveniência.
+              </p>
+              <p>
+                Para atender a todos com maior comodidade, disponibilizamos também experiências digitais pensadas para inspirar escolhas com mais sabor e sofisticação.
+              </p>
+              <p class="font-bold text-leaf">Todos os nossos produtos são selecionados.</p>
+            </div>
+          </div>
+
+          <div class="relative overflow-hidden rounded-[2.5rem] border border-stone-200 bg-white shadow-card">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(135,179,64,0.10),transparent_58%)]"></div>
             <img
               src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80"
-              alt="Pessoa segurando sacola com vegetais frescos"
-              class="h-full w-full object-cover"
+              alt="Atendente segurando sacola com produtos frescos"
+              class="relative h-full w-full object-cover"
             />
           </div>
-          <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">Quem somos nós</p>
-            <h2 class="mt-4 font-display text-4xl text-stone-800 sm:text-5xl">Uma marca feita de variedade, excelência e proximidade</h2>
-            <p class="mt-6 text-base leading-8 text-stone-600">
-              Variedade, excelência em produtos de hortifruti e ótimo atendimento: assim a Rede Kalimera construiu uma marca próxima, acolhedora e reconhecida pela qualidade. Essa mesma essência agora inspira nossas experiências digitais.
-            </p>
-            <p class="mt-5 text-base leading-8 text-stone-600">
-              Da adega premium às degustações do mês, tudo nasce da mesma ideia central: selecionar com cuidado, servir com beleza e transformar cada escolha em uma experiência memorável.
-            </p>
-            <p class="mt-5 font-semibold text-leaf">
-              Todos os nossos produtos são selecionados.
-            </p>
-          </div>
         </div>
       </section>
 
-      <section id="qualidade" class="px-4 py-8 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#76c31f,#56a515)] px-6 py-8 text-white shadow-card sm:px-10 lg:px-14">
-          <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-white/10 text-3xl">
-              <i class="fa-solid fa-award"></i>
+      <section class="px-4 py-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[linear-gradient(135deg,#69bf1f,#49a20d)] px-6 py-7 text-white shadow-card sm:px-10 lg:px-14">
+          <div class="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:text-left">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-white/10 text-4xl">
+              <i class="fa-solid fa-certificate"></i>
             </div>
             <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.26em] text-white/80">Compromisso Kalimera</p>
-              <h2 class="mt-2 font-display text-3xl sm:text-4xl">Todos os nossos produtos são de 1ª qualidade!</h2>
+              <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/85">Compromisso Kalimera</p>
+              <h2 class="mt-2 font-sans text-3xl font-extrabold sm:text-4xl">Todos os nossos produtos são de 1ª qualidade!</h2>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="destinos" class="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-        <div class="mx-auto max-w-7xl">
-          <div class="text-center">
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-leaf">Conheça nossas experiências</p>
-            <h2 class="mt-4 font-display text-4xl text-stone-800 sm:text-5xl">Procure a mais próxima de você</h2>
-            <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-stone-600">
-              Seja para comprar vinhos especiais ou acompanhar a agenda de degustações, criamos dois caminhos claros para o cliente encontrar a experiência ideal.
-            </p>
-          </div>
+      <section id="destinos" class="px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+        <div class="mx-auto max-w-7xl text-center">
+          <a href="#destinos" class="inline-flex rounded-full bg-stone-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-stone-800">
+            Conheça nossas unidades
+          </a>
+          <p class="mt-4 text-sm font-bold text-stone">Procure a mais próxima de você!</p>
+        </div>
 
-          <div class="mt-12 grid gap-6 lg:grid-cols-2">
-            <a href="./HARMONIZACAO/" class="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card transition hover:-translate-y-1 hover:border-gold/40">
-              <img
-                src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=80"
-                alt="Taças e garrafas de vinho em ambiente sofisticado"
-                class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-              <div class="p-7">
-                <p class="text-xs uppercase tracking-[0.24em] text-bronze">kalimera.com.br/HARMONIZACAO</p>
-                <h3 class="mt-3 font-display text-3xl text-stone-800">Kalimera Harmonização</h3>
-                <p class="mt-4 text-base leading-8 text-stone-600">
-                  Uma adega premium com rótulos do mundo todo, harmonizações, receitas e uma experiência de compra sofisticada.
-                </p>
+        <div class="mx-auto mt-10 grid max-w-7xl gap-6 xl:grid-cols-2">
+          <article class="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+            <div class="grid lg:grid-cols-[0.95fr,1.05fr]">
+              <div class="min-h-[320px]">
+                <iframe
+                  title="Mapa da Loja Retiro"
+                  src="https://www.google.com/maps?q=Rua%20do%20Retiro%2C%202400%2C%20Vila%20das%20Hortencias%2C%20Jundiai%20SP&z=16&output=embed"
+                  class="h-full min-h-[320px] w-full border-0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-            </a>
+              <div class="p-7 text-left">
+                <p class="text-xs uppercase tracking-[0.24em] text-leaf">Unidade oficial</p>
+                <h3 class="mt-3 font-display text-4xl text-ink">Loja Retiro</h3>
+                <div class="mt-5 space-y-3 text-base leading-8 text-stone">
+                  <p><strong>Endereço:</strong> Rua do Retiro, 2400, Vila das Hortências, Jundiaí/SP</p>
+                  <p><strong>Telefone:</strong> (11) 4671-0174</p>
+                  <p><strong>Horário:</strong> Segunda a sábado, das 7h às 22h30</p>
+                  <p><strong>Domingos e feriados:</strong> das 7h às 22h</p>
+                </div>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=Rua%20do%20Retiro%2C%202400%2C%20Vila%20das%20Hortencias%2C%20Jundiai%2C%20SP"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center rounded-full bg-kaligreen px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:brightness-95"
+                  >
+                    Como chegar
+                  </a>
+                  <a
+                    href="https://m.uber.com/ul/?action=setPickup&dropoff[formatted_address]=Rua%20do%20Retiro%2C%202400%2C%20Vila%20das%20Hortencias%2C%20Jundiai%2C%20SP"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center rounded-full border border-leaf/20 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-ink transition hover:border-leaf/40 hover:text-leaf"
+                  >
+                    Chamar Uber
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
-            <a href="./DEGUSTACAO/" class="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card transition hover:-translate-y-1 hover:border-gold/40">
-              <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1400&q=80"
-                alt="Mesa noturna pronta para degustação exclusiva"
-                class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
-              />
-              <div class="p-7">
-                <p class="text-xs uppercase tracking-[0.24em] text-bronze">kalimera.com.br/DEGUSTACAO</p>
-                <h3 class="mt-3 font-display text-3xl text-stone-800">Kalimera Degustações</h3>
-                <p class="mt-4 text-base leading-8 text-stone-600">
-                  Um calendário vivo com as degustações do mês, datas desejadas, noites temáticas e convites para experiências exclusivas.
-                </p>
+          <article class="overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card">
+            <div class="grid lg:grid-cols-[0.95fr,1.05fr]">
+              <div class="min-h-[320px]">
+                <iframe
+                  title="Mapa da Loja Japi"
+                  src="https://www.google.com/maps?q=Avenida%20Antonio%20Pincinato%2C%2021%2C%20Recanto%20Quarto%20Centenario%2C%20Jundiai%20SP&z=16&output=embed"
+                  class="h-full min-h-[320px] w-full border-0"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-            </a>
-          </div>
+              <div class="p-7 text-left">
+                <p class="text-xs uppercase tracking-[0.24em] text-leaf">Unidade oficial</p>
+                <h3 class="mt-3 font-display text-4xl text-ink">Loja Japi</h3>
+                <div class="mt-5 space-y-3 text-base leading-8 text-stone">
+                  <p><strong>Endereço:</strong> Av. Antônio Pincinato, 21, Recanto Quarto Centenário, Jundiaí/SP</p>
+                  <p><strong>Telefone:</strong> (11) 4671-0174</p>
+                  <p><strong>Horário:</strong> Todos os dias, das 7h às 22h</p>
+                </div>
+                <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Ant%C3%B4nio%20Pincinato%2C%2021%2C%20Recanto%20Quarto%20Centen%C3%A1rio%2C%20Jundia%C3%AD%2C%20SP"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center rounded-full bg-kaligreen px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:brightness-95"
+                  >
+                    Como chegar
+                  </a>
+                  <a
+                    href="https://m.uber.com/ul/?action=setPickup&dropoff[formatted_address]=Av.%20Ant%C3%B4nio%20Pincinato%2C%2021%2C%20Recanto%20Quarto%20Centen%C3%A1rio%2C%20Jundia%C3%AD%2C%20SP"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center justify-center rounded-full border border-leaf/20 bg-white px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-ink transition hover:border-leaf/40 hover:text-leaf"
+                  >
+                    Chamar Uber
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mx-auto mt-12 grid max-w-7xl gap-6 lg:grid-cols-2">
+          <a href="./DEGUSTACAO/" class="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card transition hover:-translate-y-1 hover:border-leaf/30">
+            <img
+              src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1400&q=80"
+              alt="Mesa preparada para degustação exclusiva"
+              class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div class="p-7 text-left">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">kalimera.com.br/DEGUSTACAO</p>
+              <h3 class="mt-3 font-display text-4xl text-ink">DEGUSTACAO</h3>
+              <p class="mt-4 text-base leading-8 text-stone">
+                Convites para as degustações do mês, próximas datas, noites temáticas e experiências especiais com a cara do Kalimera.
+              </p>
+            </div>
+          </a>
+
+          <a href="./HARMONIZACAO/" class="group overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-card transition hover:-translate-y-1 hover:border-leaf/30">
+            <img
+              src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=80"
+              alt="Taças e garrafas de vinho em ambiente sofisticado"
+              class="h-72 w-full object-cover transition duration-700 group-hover:scale-105"
+            />
+            <div class="p-7 text-left">
+              <p class="text-xs uppercase tracking-[0.24em] text-leaf">kalimera.com.br/HARMONIZACAO</p>
+              <h3 class="mt-3 font-display text-4xl text-ink">HARMONIZACAO</h3>
+              <p class="mt-4 text-base leading-8 text-stone">
+                Descubra combinações entre vinho e sabor, sugestões refinadas, receitas inspiradoras e uma curadoria pensada para surpreender.
+              </p>
+            </div>
+          </a>
         </div>
       </section>
     </main>
